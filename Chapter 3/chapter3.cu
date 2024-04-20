@@ -63,12 +63,12 @@ void MatMulKernel(float* M, float* N, float* P, int width){
 
 __global__
 void MatMulKernelRow(float* M, float* N, float* P, int width){
-    int col = blockDimx. * blockIdx.x + threadIdx.x;
+    int col = blockDim.x * blockIdx.x + threadIdx.x;
 
     if ((col < width)){
         float Pvalue = 0;
         for (int i = 0; i < width; ++i){
-            Pvalue += M[]
+            Pvalue += M[i]
             P[row * width + col] = Pvalue;
         }
     }
