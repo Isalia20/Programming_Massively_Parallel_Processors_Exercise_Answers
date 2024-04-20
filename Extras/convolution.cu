@@ -177,9 +177,7 @@ int main(int argc, const char* argv[]){
     initConvKernel(conv_kernel, kernel_size * kernel_size * out_ch * in_ch);
 
     // GPU Conv2d
-    for (int i = 0; i < 1000000; i++){
-        conv2dGPU(x, out, conv_kernel, shape, output_height, output_width, kernel_size, out_ch, in_ch, width, height);
-    }
+    conv2dGPU(x, out, conv_kernel, shape, output_height, output_width, kernel_size, out_ch, in_ch, width, height);
     
     cudaError_t err = cudaGetLastError();
     if (err != cudaSuccess) {
