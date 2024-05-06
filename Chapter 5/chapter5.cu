@@ -3,8 +3,6 @@ __global__
 void matrixMulKernel(float* M, float* N, float* P, int width){
     __shared__ float Mds[TILE_WIDTH][TILE_WIDTH];
     __shared__ float Nds[TILE_WIDTH][TILE_WIDTH];
-    int bx = blockIdx.x;
-    int by = blockIdx.y;
     int tx = threadIdx.x;
     int ty = threadIdx.y;
 
