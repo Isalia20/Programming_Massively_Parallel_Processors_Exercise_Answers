@@ -20,7 +20,7 @@ void matrixMulKernel(float* M, float* N, float* P, int width){
         __syncthreads();
     }
 
-    P[Row * Width + Col] = Pvalue;
+    P[Row * width + Col] = Pvalue;
 }
 
 int main(){}
